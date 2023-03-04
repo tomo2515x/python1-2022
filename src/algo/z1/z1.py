@@ -4,3 +4,8 @@ def add(a, b):
 
 def mul(a, b):
     print(a * b)
+def calculate(fn, a, b):
+    return fn(a,b)
+
+print(calculate("add", 1, 2))
+print(calculate("mul", 1, 2))
