@@ -13,4 +13,4 @@ w = ((1, 0), (0, 1))
 g = sorted(w, key=lambda x: x[1])
 print(g)
 
-#big algorytm
+#big algorytmhggfdgfgd
