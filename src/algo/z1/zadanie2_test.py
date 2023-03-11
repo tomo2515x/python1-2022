@@ -30,3 +30,4 @@ plt.ylabel("Czas wykonania (usec)")
 plt.show()
 
 
+
