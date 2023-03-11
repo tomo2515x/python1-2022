@@ -24,10 +24,31 @@ for i in dane:
 os.system("cls")
 print(f"x={x} \ny={y}")
 
-plt.plot(x,y)
-plt.xlabel("Rozmiar danych")
-plt.ylabel("Czas wykonania (usec)")
-plt.show()
+# plt.plot(x,y)
+# plt.xlabel("Rozmiar danych")
+# plt.ylabel("Czas wykonania (usec)")
+# plt.show()
+
+lista1 = [2,5,7,9]
+lista2 = [4,8,18,27]
+
+def list_compare(l1, l2):
+    
+    wyndziel = []
+    for el1 in l1:
+        dziel = 0
+        
+        for el2 in l2:
+            
+            if el2 % el1 == 0:
+                dziel += 1
+                
+        wyndziel.append(dziel)
+    
+    return wyndziel
+
+print(list_compare(lista1, lista2))
+
 
 
 
