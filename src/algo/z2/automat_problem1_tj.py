@@ -5,22 +5,13 @@ from random import seed, randint
 
 def generate_data(data_size):
     # tutaj wstawić coś co generuje dane dla naszego algorytmu
-    return [randint(0, 10 ** 6) for _ in range(data_size)]
+    # return [randint(0, 10 ** 6) for _ in range(data_size)]
     pass
 
 
-def solve_problem(l1, l2):
-    
-    wyndziel = []
-    for el1 in l1:
-        dziel = 0  
-        for el2 in l2:
-            if el2 % el1 == 0:
-                dziel += 1
-                
-        wyndziel.append(dziel)
-    
-    return wyndziel
+def solve_problem(data):
+    # tutaj wstawić algorytm który rozwiązuje dany problem dla danych `data
+    pass
 
 
 def run_tests(generator, solver):
@@ -30,12 +21,11 @@ def run_tests(generator, solver):
     while size < 10000:
         print(f'testing solver for {size=}')
         data = generator(size)
-        data1 = generator(size)
         REPETITIONS = 400
         time_sum = 0
         for i in range(REPETITIONS):
             st = datetime.now().timestamp()
-            ret = solver(data, data1)
+            ret = solver(data)
             en = datetime.now().timestamp()
             time_sum += (en - st)
 
