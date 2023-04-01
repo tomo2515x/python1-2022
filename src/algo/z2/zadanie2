@@ -1,0 +1,39 @@
+from random import seed, randint
+
+# from src.algo.z2.automat import run_tests, visualize
+
+
+def solve(a: list[int]) -> int:
+    tenPercent = len(a)*0,1
+    startPoint = 0
+    endPoint = tenPercent
+    for i in range(tenPercent):
+        get_value(a, startPoint, endPoint)
+        startPoint = startPoint + tenPercent
+        endPoint *= 2
+
+
+
+def get_value(a, s, e):
+    prev = 0
+    for element in a[s:e]:
+        ret = prev + element
+        
+    return ret
+            
+        
+        
+        
+
+
+def generate_data(data_size):
+    seed(111)
+    mx_num = 10 ** 4
+    data_a = [randint(0, mx_num) for _ in range(data_size)]
+    return {"a": data_a}
+
+
+if __name__ == '__main__':
+    x, y = run_tests(generate_data, solve, max_size=10**4)
+    visualize(x, y)
+    # print(solve([2, 5, 7, 9, 2], [4, 8, 18, 27]))
