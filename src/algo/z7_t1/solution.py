@@ -17,16 +17,6 @@ aba←→ac -> abac
 
 
 def split_to_syllables(word: str) -> list[str]:
-<<<<<<< Updated upstream
-    #todo: your solution hered
-    splited = word.split()
-    output = ""
-    for x in range(len(splited)):
-         output = splited[x-1] + splited[x]
-    return output
-
-=======
-    
     syllist = []
 
     for syllable in range(len(word)):
@@ -38,5 +28,5 @@ def split_to_syllables(word: str) -> list[str]:
     return(syllist)
     
 
-print(split_to_syllables("aabb"))
->>>>>>> Stashed changes
+
+
