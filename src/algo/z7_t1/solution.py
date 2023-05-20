@@ -20,12 +20,11 @@ def split_to_syllables(word: str) -> list[str]:
     syllist = []
 
     for syllable in range(len(word)):
-        print(syllable)
-        
+
         if syllable+1 < len(word):
             syllist.append(word[syllable]+word[syllable+1])
     
-    return(syllist)
+    return syllist
     
 
 
