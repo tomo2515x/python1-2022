@@ -17,7 +17,26 @@ Zadanie -- mamy dostępny zbiór sylab, oraz pewne słowo `word`; pytanie -- czy
 
 """
 
+def split_to_syllables(word: str) -> list[str]:
+    syllist = []
+
+    for syllable in range(len(word)):
+
+        if syllable+1 < len(word):
+            syllist.append(word[syllable]+word[syllable+1])
+    
+    return syllist
 
 def construct_word(syllables: set[str], word: str) -> bool:
-    #todo: your solution here
-    return True
+    syllist = []
+    for syllable in range(len(word)):
+        
+        if syllable+1 < len(word):
+            syllist.append(word[syllable]+word[syllable+1])
+
+    if set(syllist) & syllables == set(syllist):
+        return True
+    return False
+
+
+print(construct_word({"aa"}, "aaaaaaaa"))
