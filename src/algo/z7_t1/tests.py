@@ -23,6 +23,10 @@ class KeyLockTest(unittest.TestCase):
         self.assertEquals(split_to_syllables("aabb"), ["aa", "ab", "bb"])
 
 if __name__ == '__main__':
+<<<<<<< Updated upstream
     unittest.main() 
 
+=======
+    unittest.main()
+>>>>>>> Stashed changes
 
