@@ -13,18 +13,23 @@ np.
 
 
 def get_latest(versions: list[str]) -> str:
-    """
-    :return: Latest semantic version from the given `versions`
-    """
-    # todo: your code
-    return '0.0.1'
+    v = []
+    for i in versions:
+        v.append("".join(i.split(".")))
+    return versions[v.index(max(v))]
+
 
 
 def next_version(version: str, level: int) -> str:
-    """
-    :param version: Current version
-    :param level: Which part should be incremented; 0: major, 1: minor, 2: patch
-    :return: Properly incremented version
-    """
-    # todo: your code
-    return '0.0.1'
+    v = version.split(".")
+
+    if level == 0:
+        return str(int(v[0])+1)+".0.0"
+    elif level == 1:
+        return str(v[0])+"."+str(int(v[1])+1)+".0"
+    elif level == 2:
+        return str(v[0])+"."+str(v[1])+"."+str(int(v[2])+1)
+    else:
+        print("out of range")
+    return False
+
