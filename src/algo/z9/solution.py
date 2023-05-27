@@ -21,5 +21,17 @@ b = [1, 5, 1]  (teraz na ostatniej pozycji odjęliśmy 5, czyli a[1])
 
 
 def equalize_parity(a: list[int]) -> bool:
-    # todo: your solution here
-    return True
+    n = len(a)
+    c = [x % 2 for x in a]
+
+    if sum(c) == 0 or sum(c) == n:
+        return True
+
+    smallest = min(a)
+    if smallest % 2 == 1:
+        return True
+
+    return False
+
+
+print(equalize_parity(a))
