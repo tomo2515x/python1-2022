@@ -10,4 +10,6 @@ def reverse_string(s: str):
         res += letters[n - 1 - idx]
     return res[::-1]
 
+#gg
+
 
