@@ -7,15 +7,14 @@ def get_new_bag(data_size: int):
 
 
 def insert_element(bag: list[list], element: int):
-    h = element.__hash__()
-    # todo -- wrzucić odpowiednio hash `h` do bag
-    # 1) sprawdzić czy już jest w bag-u; jeśli tak to return
-    # 2) jeśli nie jest, to sprawdzić indeks listy do której trzeba wrzucić element, np. `idx`, i potem wrzucić
-    # ten element do bag[idx]
-    #
+ 
+    bag[element.__hash__() % len(bag)].append(element)
+
 
 def contains_element(bag: list[list], element: int) -> bool:
-    h = element.__hash__()
+   
+    return bag[element.__hash__() % len(bag)].__contains__(element)
+
     # todo: sprawdzić czy `x` z hashem `h` jest w `bag`
     # odpowiednio zawężony (do [0...M-1] hash ma być numerem listy)
     # wyliczyć "indeks listy" z hasha,
@@ -23,22 +22,32 @@ def contains_element(bag: list[list], element: int) -> bool:
 
 
 def remove_element(bag: list[list], element: int) -> bool:
-    h = element.__hash__()
-    # todo: usunąć `x` z hashem `h` z `bag`
+    bag[element.__hash__() % len(bag)].remove(element)
     # wyliczyć "indeks listy" z hasha,
     # usunąć z listy bag[idx] element `element`
 
+# def hashKey(listId, bagCapacity):
+#     keyvar1 = [listId[0], listId[1]]
+#     return ''.join(keyvar1).__hash__() % bagCapacity
+
+# name1 = ["Matt", "Stone"]
 
 
 if __name__ == '__main__':
     bag = get_new_bag(1000)  # np. bag[0] jest listą... i bag[999]...
-    insert_element(bag, 17)
+ 
+    for a in range(10000):
+        insert_element(bag, a)
+    
     insert_element(bag, 17)
     insert_element(bag, 32)
+    insert_element(bag, "amon")
+    insert_element(bag, "amom")
+    print(bag)
 
-    print(contains_element(bag, 17), True)
-    print(contains_element(bag, 18), False)
-    remove_element(bag, 32)
-    print(contains_element(bag, 32), False)
-    remove_element(bag, 17)
-    print(contains_element(bag, 17), False)
+    print(contains_element(bag, 17))
+    # print(contains_element(bag, 18), False)
+    # remove_element(bag, 32)
+    print(contains_element(bag, 32))
+    # remove_element(bag, 17)
+    # print(contains_element(bag, 17))
