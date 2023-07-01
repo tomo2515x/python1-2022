@@ -35,7 +35,7 @@ if __name__ == '__main__':
     for mask in range(2 ** N):
         # sprawdzić jaki jest koszt wybranych przedmiotów dla danej wartości `mask`
         # bierzemy przedmiot 0 jeśli mask[0] = 1
-        # nie bierzemy go jeśli mask[0] = 1
+        # nie bierzemy go jeśli mask[0] = 0
         maska = get_bin_representation(mask, N)
         print(maska)
         for item_position in range(N):
