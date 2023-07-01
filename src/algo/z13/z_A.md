@@ -12,6 +12,21 @@ ale nie 7 = 2 + 3 + 2
 czyli ostatecznie
 
 ```py
+def recur(deconumber, remaining, valid):
+  if remaining == 0:
+    return decomposed
+
+  for number in valid:
+    if deconumber-number >= 0:
+      
+
+
+
 def get_decomposition(n, k, x) -> list[int]:
-  pass
+
+
+
+
+
+
 ```
