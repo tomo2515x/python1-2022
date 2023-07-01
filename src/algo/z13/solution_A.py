@@ -1,5 +1,4 @@
-def get_decomposition(n, k, x) -> list[int]:
-    pass
+
 import random
 
 def get_decomposition(n, k, x) -> list[int]:
