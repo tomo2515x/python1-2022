@@ -18,7 +18,9 @@ def recur(deconumber, remaining, valid):
 
   for number in valid:
     if deconumber-number >= 0:
-      
+      ans.append(number)
+    
+    recur(deconumber-number, deconumber-number, valid)
 
 
 
