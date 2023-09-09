@@ -1,4 +1,3 @@
-<<<<<<< Updated upstream
 
 import random
 
@@ -34,39 +33,4 @@ def get_decomposition(n, k, x) -> list[int]:
     else:
         return []
     
-=======
-def recur(deconumber, remaining, valid):
 
-    if remaining == 0:
-        return 1
-    else:
-        ans = []
-        for number in valid:
-            if remaining-number >= 0:
-                new_deco = deconumber[:]
-                print(new_deco)
-                new_deco.append(number)
-                print(new_deco)
-                cand = recur(new_deco, remaining-number, valid)
-                
-                if cand:
-                    ans.append(cand)
-                    
-            if len(ans) > 0:
-            
-                return ans
-
-    
-
-
-
-def get_decomposition(n, k, x) -> list[int]:
-    valid = [a for a in range(1,k+1)]
-    if x in valid:
-        valid.remove(x)
-    valid = sorted(valid, reverse=True)
-
-    recur([], n, valid)
-
-print(get_decomposition(19, 5, 1))
->>>>>>> Stashed changes
