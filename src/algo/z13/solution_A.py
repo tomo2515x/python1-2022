@@ -2,6 +2,7 @@
 import random
 
 def get_decomposition(n, k, x) -> list[int]:
+
     index = 1
     list_size = k
     ent_number = n
@@ -32,5 +33,10 @@ def get_decomposition(n, k, x) -> list[int]:
         return used_numbers
     else:
         return []
+    
+
+
+
+
     
 
